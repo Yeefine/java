@@ -18,8 +18,8 @@
 + #### <font color=#5F9EA0> 1.使用new+构造方法，创建一个新的对象</font>
 
 + #### <font color=#5F9EA0> 2.构造方法是定义在java类中的一个用来初始化对象的方法 构造方法与类同名且没有返回值</font>
-![](../pic/1.png)
-![](../pic/2.png)
+![](https://github.com/W-Avan/java/raw/master/pic/1.png)
+![](https://github.com/W-Avan/java/raw/master/pic/2.png)
 
 + #### <font color=#5F9EA0> 4.有参构造方法即在()声明参数，可与无参构造方法共存</font>
 
@@ -51,4 +51,4 @@ c.**静态方法中不能直接调用非静态方法**，需要通过对象来�
 &emsp;<font color=#FF0000>注意：</font>  
 &emsp;
 **静态初始化块只在类加载时执行，且只会执行一次，同时静态初始化块只能给静态变量赋值，不能初始化普通的成员变量**  
-如图：![](../pic/3.jpg)
+如图：![](https://github.com/W-Avan/java/raw/master/pic/3.jpg)
