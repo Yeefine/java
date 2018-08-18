@@ -240,4 +240,46 @@ instanceof运算符，来解决引用对象的类型，避免类型转换的安�
 &emsp;UML类图、业务逻辑和所有支持结构一同被用于定义全部的代码结构。  
 ![](https://github.com/W-Avan/java/raw/master/pic/7.png)   
 > 4.UML建模工具  
-&emsp;Visio、Rational Rose、PowerDesign三种建模工具应用最广
+&emsp;Visio、Rational Rose、PowerDesign三种建模工具应用最广  
+
+## 异常与异常处理：
++ #### 处理异常  
+try-catch以及try-catch-finally  
+> <font color=#FF0000>try</font>{  
+&emsp; //一些会抛出异常的方法  
+}<font color=#ff0000>catch</font> (Exception e){  
+&emsp; //处理该异常的代码块  
+}<font color=#ff0000>catch</font> (Exception2 e){  
+&emsp; //处理Exception2的代码块  
+}...(n个catch块)...{  
+} finally {  
+&emsp; //最终将要执行的一些代码  
+}  
+编写多重catch语句块时应按照先小后大(先子类后父类)的顺序  
+
++ #### Java中的异常抛出以及自定义异常  
+ **异常抛出：**
+> throw —— 将产生的异常抛出(动作)  
+throws —— 声明将要抛出何种类型的异常(声明)  
+&emsp; publc void 方法名(参数列表)  throws 异常列表 {  
+&emsp; //调用会抛出异常的方法或者：  
+&emsp; throw new Exception();  
+}  
+
+ **自定义异常：**  
+ > class 自定义异常类 extends 异常类型{  
+>   
+}  
+
++ #### Java中的异常链
++ #### 实际应用中的经验与总结
+> 1.处理运行时异常时，采用逻辑去合理规避同时辅助try-catch处理  
+2.在多重catch块后面，可以加一个catch(Exception)来处理可能会被遗漏的异常  
+3.对于不确定的代码，也可以加上try-catch，处理潜在的异常  
+4.尽量去处理异常，切忌只是简单的调用printStackTrace()去打印输出  
+5.具体如何处理异常，要根据不同的业务需求和异常类型去决定  
+6.尽量添加finally语句块去释放占用的资源
+>  
+> <font color=#ff2569>e.toString()：  获得异常种类和错误信息  
+e.getMessage():获得错误信息  
+e.printStackTrace()：在控制台打印出异常种类，错误信息和出错位置等</font>
