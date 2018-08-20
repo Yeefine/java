@@ -282,4 +282,21 @@ throws —— 声明将要抛出何种类型的异常(声明)
 >  
 > <font color=#ff2569>e.toString()：  获得异常种类和错误信息  
 e.getMessage():获得错误信息  
-e.printStackTrace()：在控制台打印出异常种类，错误信息和出错位置等</font>
+e.printStackTrace()：在控制台打印出异常种类，错误信息和出错位置等</font>  
+
+## Java中的字符串:  
++ #### 字符串的不变性  
+> String对象创建后则不能被修改，是不可变的，所谓的修改其实时创建了新的对象，所指向的内存空间不同  
+每次new一个字符串就是产生一个新的对象，即便两个字符串的内容相同，使用"=="比较时也为"false"，如果只需比较内容是否相同，应使用"equals()"方法  
+
++ #### String类的常用方法  
+>![](https://github.com/W-Avan/java/raw/master/pic/8.jpg)  
+> + 字符串str中字符的索引从0开始，范围为0到str.length()-1 (与位置相关，都是从第0个开始数)
+> + 使用indexOf进行字符或字符串查找时，如果匹配返回位置索引；如果没有匹配结果，返回-1  
+> + 使用substring(beginIndex, endIndex)进行字符串截取时，包括beginIndex位置的字符，不包括endIndex位置的字符  
+> + "=="：判断两个字符串在内存中首地址是否相同，即判断是否是同一个字符串对象  
+equals()：比较储存在两个字符串对象中的内容是否一致(比较字符串，单个字符不能使用)  
+
++ #### Java中的StringBuilder类  
+> &emsp; String类具有不可变性，会额外创建一个对象，StringBuilder或StringBuffer就可以避免这个问题。StringBuffer是线程安全的，而StringBuilder则没有实现线程安全功能，所以性能略高。一般如果需要创建一个内容可变的字符串对象，应优先考虑使用StringBuilder类  
+> ![](https://github.com/W-Avan/java/raw/master/pic/9.jpg)
