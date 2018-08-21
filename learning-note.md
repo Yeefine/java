@@ -299,4 +299,62 @@ equals()：比较储存在两个字符串对象中的内容是否一致(比较�
 
 + #### Java中的StringBuilder类  
 > &emsp; String类具有不可变性，会额外创建一个对象，StringBuilder或StringBuffer就可以避免这个问题。StringBuffer是线程安全的，而StringBuilder则没有实现线程安全功能，所以性能略高。一般如果需要创建一个内容可变的字符串对象，应优先考虑使用StringBuilder类  
-> ![](https://github.com/W-Avan/java/raw/master/pic/9.jpg)
+> ![](https://github.com/W-Avan/java/raw/master/pic/9.jpg)  
+
+## Java中的常用类  
++ #### Java中的包装类
+> Java为每个基本数据类型都提供了一个包装类，为了让基本数据类型也具备对象的特性
+ ![](https://github.com/W-Avan/java/raw/master/pic/10.jpg)  
+> 包装类主要提供了两大类方法：
+> 1. 将本类型和其他基本类型进行转换的方法
+> 2. 将字符串和本类型及包装类互相转换的方法<br>  
+>
+> **装箱：** 把基本类型转换成包装类，使其具有对象的性质，又可分为手动装箱和自动装箱  
+> int i = 10; <font color=#7fffd4>//定义一个int基本类型值</font>  
+> Integer x = new Integer(i); <font color=#7fffd4>//手动装箱</font>  
+> Integer y = i; <font color=#7fffd4>//自动装箱</font>  
+**拆箱：** 和装箱相反，把包装类对象转换成基本类型的值，又可分为手动拆箱和自动拆箱  
+> Integer j = new Integer(8); <font color=#7fffd4>//定义一个Integer包装类对象，值为8</font>  
+> int m = j.intValue(); <font color=#7fffd4>手动拆箱为int类型</font>  
+> int n = j; <font color=#7fffd4>//自动拆箱为int类型</font>  
+
++ #### Java中基本类型和字符串之间的转换  
+> 基本类型转换为字符串有三种方法：
+> 1. 使用包装类的 toString() 方法  
+> 2. 使用String类的 valueOf() 方法  
+> 3. 用一个空字符串加上基本类型，得到的就是基本类型数据对应的字符串  
+> ![](https://github.com/W-Avan/java/raw/master/pic/11.jpg)  
+>
+> 将字符串转换成基本类型有两种方法：  
+> 1.调用包装类的parseXxx静态方法  
+> 2.调用包装类的valueOf()方法转换为基本类型的包装类，会自动拆箱  
+>![](https://github.com/W-Avan/java/raw/master/pic/12.jpg)  
+
++ #### 使用Date和SimpleDateFormat类表示时间  
+> &emsp;使用Date类的**默认无参构造方法**创建出的对象就代表**当前时间**  
+> Wed Jun 11 09:22:30 CST 2014  
+> &emsp;使用SimpleDateFormat来对日期时间进行格式化，如可以将日期转换为指定格式的文本，也可将文本转换为日期  
+>
+> 1.使用format()方法将日期转换为指定格式的文本<font color=#ff0000>(对象转换为字符串)</font>  
+> ![](https://github.com/W-Avan/java/raw/master/pic/13.jpg)  
+> 代码中的 “yyyy-MM-dd HH:mm:ss” 为预定义字符串， yyyy 表示四位年， MM 表示两位月份， dd 表示两位日期， HH 表示小时(使用24小时制)， mm 表示分钟， ss 表示秒，这样就指定了转换的目标格式，最后调用 format() 方法将时间转换为指定的格式的字符串。  
+>  
+> 2.使用parse()方法将文本转换为日期<font color=#ff0000>(字符串转换为对象)</font>  
+> ![](https://github.com/W-Avan/java/raw/master/pic/14.jpg)  
+>
+> <font color=#ff0000>注意：</font>  
+> &emsp;1.调用 SimpleDateFormat 对象的 parse() 方法时可能会出现转换异常，即 ParseException ，因此需要进行<font color=#ff0000>异常处理</font>  
+> &emsp;2.使用 Date 类时需要导入 java.util 包，使用 SimpleDateFormat 时需要导入java.text 包   
++ #### Calendar 类的应用  
+> java.util.Calendar 类是一个抽象类，可以通过调用 getInstance() 静态方法获取一个 Calendar 对象，此对象已由当前日期时间初始化，即默认代表当前时间，如 Calendar c = Calendar.getInstance();  
+> ![](https://github.com/W-Avan/java/raw/master/pic/15.jpg)  
+> Calendar 类提供了 getTime() 方法，用来获取 Date 对象，完成 Calendar 和 Date 的转换，还可通过 getTimeInMillis() 方法，获取此 Calendar 的时间值，以毫秒为单位。如下所示：  
+> ![](https://github.com/W-Avan/java/raw/master/pic/16.jpg)  
+
++ #### 使用Math类操作数据  
+> &emsp;Math 类位于 java.lang 包中，包含用于执行基本数学运算的方法， Math 类的所有方法都是静态方法，所以使用该类中的方法时，可以直接使用类名.方法名，如： Math.round();  
+> &emsp;常用的方法：  
+> ![](https://github.com/W-Avan/java/raw/master/pic/17.jpg)  
+> 通过案例我们来认识一下他们的使用吧！！  
+> ![](https://github.com/W-Avan/java/raw/master/pic/18.jpg)  
+>(注意随机数格式，产生[0,1) 和 [0,99)的区别)
