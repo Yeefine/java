@@ -1,4 +1,26 @@
-# **java学习**
+# **java学习**  
+
+## 数组：  
++ #### 使用Arrays类操作Java中的数组
+> Arrays类是Java中提供的一个工具类，在 java.util 包中。该类中包含了一些方法用来直接操作数组。  
+> **1.排序**  
+> 语法：**Arrays.sort(数组名);**  
+> **2.将数组转换成字符串**  
+>语法：**Arrays.toString(数组名);**  
+
++ #### 使用foreach操作数组  
+> foreach是for语句的特殊简化版本，在遍历数组、集合时，foreach更简单便捷。  
+> 语法：  
+> **for(元素类型 元素变量 ： 遍历对象){  
+> &emsp;执行的代码  
+}**  
+
++ #### Java中的二维数组  
+> 1.声明数组并分配空间  
+> **数据类型[][] 数组名 = new 数据类型[行的个数][列的个数];**  
+> 或者  
+> **数据类型[][] 数组名;**  
+> **数组名 = new 数据类型[行的个数][列的个数];**
 
 ## 成员变量和局部变量区别：
 * ####  1.作用域不同   
@@ -357,4 +379,30 @@ equals()：比较储存在两个字符串对象中的内容是否一致(比较�
 > ![](https://github.com/W-Avan/java/raw/master/pic/17.jpg)  
 > 通过案例我们来认识一下他们的使用吧！！  
 > ![](https://github.com/W-Avan/java/raw/master/pic/18.jpg)  
->(注意随机数格式，产生[0,1) 和 [0,99)的区别)
+>(注意随机数格式，产生[0,1) 和 [0,99)的区别)  
+
+## Java中的集合框架：  
++ #### Java中的集合框架概述  
+> + **集合的概念：**  
+> &emsp;<font color=#ff0000>Java中的集合类：是一种工具类，就像是容器，储存任意数量的具有共同属性的对象</font>  
+> + **集合的作用：**  
+> &emsp;1.在类的内部，对数据进行组织；  
+> &emsp;2.简单而快速的搜索大数量的条目；  
+> &emsp;3.有的集合接口，提供了一系列排列有序的元素，并且可以在序列中间快速的插入或者删除有关元素；  
+> &emsp;4.有的集合接口，提供了映射关系，可以通过关键字(key)去快速查找到对应的唯一对象，而这个关键字可以是任意类型。  
+> + **Java集合框架体系结构：**  
+> ![](https://github.com/W-Avan/java/raw/master/pic/19.png)  
+>> + Collection 和 Map 是Java集合中的两个根接口(Collection中储存单个对象，Map中储存一对一对的key和value)  
+>> + List(序列) Queue(队列) Set(集) 是 Collection 的子接口，其中 List 和 Queue 是排列有序可以重复的, Set 中的元素无序且不能重复(其中 List 和 Set 比较常用)    
+>> + ArrayList LinkedList HashSet 三个是实现类  
+>> + HashMap(哈希表)是Map的实现类  
+>> + <Key, Value>是映射， Entry类是Map的内部类   
++ #### Collection 接口 & List 接口简介  
+> + **Collection接口**  
+> 是List、Set、Queue接口的父接口  
+> 定义了可用于操作List、Set和Queue的方法——增删改查  
+>> + **List接口及其实现类——ArrayList**  
+>> &emsp;1.List是元素有序并可以重复的集合，被称为序列  
+>> &emsp;2.List可以精确的控制每个元素的插入位置，或删除某个位置元素  
+>> &emsp;3.ArrayList——数组序列，是List的一个重要实现类  
+>> &emsp;4.ArrayList底层是由数组实现的  
