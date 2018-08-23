@@ -405,4 +405,5 @@ equals()：比较储存在两个字符串对象中的内容是否一致(比较�
 >> &emsp;1.List是元素有序并可以重复的集合，被称为序列  
 >> &emsp;2.List可以精确的控制每个元素的插入位置，或删除某个位置元素  
 >> &emsp;3.ArrayList——数组序列，是List的一个重要实现类  
->> &emsp;4.ArrayList底层是由数组实现的  
+>> &emsp;4.ArrayList底层是由数组实现的    
++ #### <font color=#ff0000>对象存入集合都变成Object类型，取出时需要类型转换</font>
