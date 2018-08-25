@@ -406,4 +406,30 @@ equals()：比较储存在两个字符串对象中的内容是否一致(比较�
 >> &emsp;2.List可以精确的控制每个元素的插入位置，或删除某个位置元素  
 >> &emsp;3.ArrayList——数组序列，是List的一个重要实现类  
 >> &emsp;4.ArrayList底层是由数组实现的    
-+ #### <font color=#ff0000>对象存入集合都变成Object类型，取出时需要类型转换</font>
++ #### <font color=#ff0000>对象存入集合都变成Object类型，取出时需要类型转换</font>  
++ #### 泛型（ List < type > ListName ）  
+> **集合中的元素，可以是任意类型的对象(对象的引用)**  
+> &emsp;如果把某个对象放入集合，则会忽略他的类型，而把它当作Object处理  
+> **泛型则是规定了某个集合只可以存放特定类型的对象**  
+> &emsp;会在编译期间进行类型检查  
+> &emsp;可以直接按指定类型获取集合元素  
+> &emsp;取出时也不用进行类型强转，存入和取出的都是指定的类型，b不是Object  
+> **泛型集合中除了可以存放泛型类型的对象，还可以存放泛型的子类型的对象**  
+> **1.泛型集合中的限定类型不能使用基本数据类型**  
+> **2.可以通过使用<font color=#ff0000>包装类</font>限定允许存入的基本数据类型 (Integer、 Long、 Boolean等)**  
++ #### Set接口及其实现类——HashSet  
+> + Set是元素无序并且不可以重复的集合，被称为集  
+> + HashSet ——哈希集，是 Set 的一个重要实现类  
+> + Set 中无 List 中的 set()方法去修改某个位置上的元素，因为List有序，Set无序  
+> + Set 只能用 foreach 或 iterator 方法遍历输出，不能像List使用 get() 方法   
++ #### Map 和 HashMap  
+> + **Map 接口**  
+>> + Map 提供了一种映射关系，其中的元素是以键值对(key-value)的形式存储的，能够实现根据 key 快速查找 value  
+>> + Map中的键值对以Entry类型的对象实例形式存在  
+>> + 键(key 值)不可重复，value 值可以  
+>> + 每个键最多只能映射到一个值  
+>> + Map 支持泛型， 形式如: Map<K, V>
+> + **HashMap 类**
+>> + HashMap 是 Map 的一个重要实现类，也是最常用的，基于哈希表实现  
+>> + HashMap 中的 Entry 对象是无序排列的  
+>> + Key 值和 value 值都可以为 null，但是一个 HashMap只能有一个 key 值为 null 的映射(key 值不可重复)  
