@@ -474,5 +474,50 @@ equals()：比较储存在两个字符串对象中的内容是否一致(比较�
 >> createNewFile() 不存在创建新文件，存在返回false  
 >> delete() 删除文件  
 >> static createTempFile(前缀三个字节长，后缀默认.temp) 默认临时空间  
->> static createTempFile(前缀三个字节长， 后缀默认.temp， 目录) 目录用 eg: new File("E:/GUI/2.jpg")    
->> deleteOnExit() 退出虚拟机删除，常用于删除临时文件
+>> static createTempFile(前缀三个字节长， 后缀默认.temp， 目录) 目录用 eg: new File("E:/GUI")    
+>> deleteOnExit() 退出虚拟机删除，常用于删除临时文件  
+>
+> **5.操作目录**  
+>> mkdir() 创建目录，必须确保父目录存在，如果不存在，创建失败  
+>> mkdirs()  创建目录，如果父目录链不存在一同创建
+>> list() 文件|目录字符串形式  
+>> listFiles()  
+>> static listRoots() 根路径
+
++ #### 原理及概念：  
+> **一.概念**  
+>> 流： 流动、 流向 从一端移动到另一端 源头与目的地  
+>> 程序 与 文件|数组|网络连接|数据库 ， 以程序为中心  
+>>
+> **二.IO流分类**
+>> 1.流向：输入流与输出流  
+>> 2.数据：  
+>> &emsp; 字节流：二进制， 可以一切文件 包括 纯文本 doc 音频、 视频等等  
+>> &emsp; 字符流：文本文件，只能处理纯文本  
+>> 3.功能：  
+>> &emsp; 节点：包裹源头  
+>> &emsp; 处理： 增强功能，提供性能   
+> **三.字符流与字节流(重点) 与 文件**  
+>> 1.字节流   
+>> &emsp; 输入流： InputStream  read(byte[] b)、 read(byte[] b , int off, int len) + close()   
+>> &emsp; FileInputStream()  
+>> &emsp; 输出流： OutputStream  write(byte[] b)、write(byte[] b, int off, int len) + flush() + close()  
+>> &emsp; FileOutputStream()  
+> 2.字符流  
+>> &emsp; 输入流： Reader  read(char[] cbuf)、 read(char[] cbuf, int off, int len) + close()  
+>> &emsp; FileReader()  
+>> &emsp; 输出流： Writer  write(char[] cbuf)、write(char[] cbuf, int off, int len) + flush() + close()
+>> &emsp; FileWriter()   
+> **四.操作**  
+>> 1. 举例： 搬家---------->读取文件  
+>> 1). 关联房子---------->建立与文件联系   
+>> 2). 选择搬家---------->选择对应流  
+>> 3). 搬家---------->读取|写出  
+>> &emsp; a).卡车大小---------->数组大小  
+>> &emsp; b).运输---------->读取、写出  
+>> 4).打发over---------->释放资源  
+>> 2. 操作：  
+>> 1)建立联系  
+>> 2)选择流  
+>> 3)操作 数组大小 + read、 write  
+>> 4)释放资源    
