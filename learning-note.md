@@ -497,6 +497,7 @@ equals()：比较储存在两个字符串对象中的内容是否一致(比较�
 >> 3.功能：  
 >> &emsp; 节点：包裹源头  
 >> &emsp; 处理： 增强功能，提供性能   
+>
 > **三.字符流与字节流(重点) 与 文件**  
 >> 1.字节流   
 >> &emsp; 输入流： InputStream  read(byte[] b)、 read(byte[] b , int off, int len) + close()   
@@ -508,6 +509,7 @@ equals()：比较储存在两个字符串对象中的内容是否一致(比较�
 >> &emsp; FileReader()  
 >> &emsp; 输出流： Writer  write(char[] cbuf)、write(char[] cbuf, int off, int len) + flush() + close()
 >> &emsp; FileWriter()   
+>
 > **四.操作**  
 >> 1. 举例： 搬家---------->读取文件  
 >> 1). 关联房子---------->建立与文件联系   
@@ -521,3 +523,29 @@ equals()：比较储存在两个字符串对象中的内容是否一致(比较�
 >> 2)选择流  
 >> 3)操作 数组大小 + read、 write  
 >> 4)释放资源    
++ #### 读取文件与写出文件  
+> **一.读取文件**  
+>> 1.建立联系、 File 对象  源头   
+>> 2.选择流 文件输入流 InputStream FileInputStream  
+>> 3.操作 ： byte[] car = new byte[1024]; + read + 读取大小  
+>> &emsp; 输出  
+>> 4.释放资源 ： 关闭  
+>
+> **二.写出文件**  
+>> 1.建立联系、 File 对象  目的地  
+>> 2.选择流 文件输出流 OutputStream FileOutputStream  
+>> 3.操作 ： write() + flush   
+>> 4.释放资源 ： 关闭  
+>
+> **三.拷贝文件 程序为桥梁**  
+>> 1.建立联系、 File 对象  源头 目的地   
+>> 2.选择流 文件输入流 InputStream FileInputStream  
+>> &emsp; 文件输出流 OutputStream FileOutputStream  
+>> 3.操作 ： 拷贝  
+>> byte[] flush = new byte[1024];   
+>> int len = 0;  
+>> while(-1 != (len = 输入了.read(flush))) {  
+>> &emsp; 输出流.write(flush, 0, len)  
+>> &emsp; }  
+>> 输出流.flush  
+>> 4.释放资源 ： 关闭  两个流  
