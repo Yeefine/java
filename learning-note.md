@@ -558,7 +558,9 @@ equals()：比较储存在两个字符串对象中的内容是否一致(比较�
 >> 1.递归查找子孙级文件|文件夹  
 >> 2.文件 复制(IO流复制)  
 >> &emsp; 文件夹 创建   
->  
+>> 3.不能父目录拷贝到子目录中  
+>> 删除超长目录(robocopy)
+>>    
 > + #### 字符流  
 > **字符流： 只能处理 纯文本， 全部为可见字符 .txt .html**  
 > 字节流： Reader FileReader  
@@ -601,4 +603,23 @@ equals()：比较储存在两个字符串对象中的内容是否一致(比较�
 > **一.节点流**  
 >> 1.字节数组 字节 节点流  
 >> &emsp; 输入流： ByteArrayInputStream  read(byte[] b, int off, int len ) + close() (close可有可无)  
->> &emsp; 输出流：  ByteArrayOutputStream  write(byte[] b, int off, int len) <font color=#ff0000> + toByteArray() 有新增方法，不要使用多态</font>
+>> &emsp; 输出流：  ByteArrayOutputStream  write(byte[] b, int off, int len) <font color=#ff0000> + toByteArray() 有新增方法，不要使用多态</font>  
+>>
+> **二.处理流**  
+>> 1.基本类型 + String 保留数据 + 类型  
+>> &emsp;  输入流： DataInputStream  readXxx
+>> &emsp; 输出流：  DataOutputStream  writeXxx  
+>>  2.引用类型(对象) 保留数据 + 类型  
+>> &emsp; 反序列化 输入流： ObjectInputStream readObject()  
+>> &emsp; 序列化 输出流： ObjectOutputStream writeObject()  
+>> &emsp; **注意：**  
+>> 1)先序列化后反序列化； 反序列化顺序必须和序列化一致  
+>> 2)不是所有的对象都可以序列化， java.io.Serializable  
+>> &emsp; 不是所有的属性都需要序列化， transient(透明)  
+>>
+> + #### 关闭方法  
+> **1.编写工具类，实现关闭功能**   
+> + #### 总结  
+>> ![](https://github.com/W-Avan/java/raw/master/pic/21.png)  
+>> *****
+>> ![](https://github.com/W-Avan/java/raw/master/pic/22.png)
