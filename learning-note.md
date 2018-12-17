@@ -807,4 +807,35 @@ equals()：比较储存在两个字符串对象中的内容是否一致(比较�
  > **URL:**  
  > **一、创建**  
  > &emsp; URL(String spec) : 绝对路径构建  
- > &emsp; URL(URL context, String spec) : 相对路径构建 
+ > &emsp; URL(URL context, String spec) : 相对路径构建   
+ >  
+ > **二、方法**  
+ > &emsp; URL url = new URL("http://www.baidu.com:80/index.html#aa?uname=wyf");  
+ > &emsp;	System.out.println("协议：" + url.getProtocol());  
+ > &emsp; System.out.println("域名：" + url.getHost());  
+ > &emsp;	System.out.println("端口号：" + url.getPort());  
+ > &emsp;	System.out.println("资源：" + url.getFile());  
+ > &emsp; System.out.println("相对路径:" + url.getPath());  
+ > &emsp; System.out.println("锚点：" + url.getRef());   //锚点  
+ > &emsp; System.out.println("参数：" + url.getQuery()); //?参数：存在锚点 返回null，不存在，返回正确   
+ >  
+ > **三、流**  
+ > &emsp; openStream()  
+ >  
+ + #### UDP 通信   
+ > ##### UDP: 以数据为中心 非面向连接 不安全 数据可能丢失 效率高
+ >  
+ > ##### 一、类 DatagramSocket DatagramPacket  
+ > **1、客户端**  
+ >> 1)、创建客户端 DatagramSocket 类 + 指定端口  
+ >> 2)、准备数据 字节数组  
+ >> 3)、打包 DatagramPacket + 服务器地址 及 端口  
+ >> 4)、发送  
+ >> 5)、释放资源  
+ >>
+ > **2、服务器端**  
+ >> 1)、创建 服务器 DatagramSocket 类 + 指定端口    
+ >> 2)、准备接收容器 字节数组 封装 DatagramPacket   
+ >> 3)、包 接收数据    
+ >> 4)、分析    
+ >> 5)、释放资源  
