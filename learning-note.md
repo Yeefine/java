@@ -747,3 +747,64 @@ equals()：比较储存在两个字符串对象中的内容是否一致(比较�
  > **六、任务调度**  
  >  
  > 后期： juc quartz
+
+
+ ## 网络编程  
+ + #### 概念  
+ > **一、网络：**  
+ > &emsp; 将不同区域的计算机连接到一起 局域网 城域网 互联网  
+ >  
+ > **二、地址：**  
+ > &emsp; IP地址 确定网络上 一个绝对地址 | 位置 ---> 房子的地址  
+ >  
+ > **三、端口号：**  
+ > &emsp; 区分计算机软件的 --> 房子的房门 2个字节 0-65535 共65536个  
+ > &emsp; 1、在同一个协议下 端口号不能重复 不同协议下端口号可以重复  
+ > &emsp; 2、1024以下的不要使用 80 --> http 21 --> ftp  
+ >  
+ > **四、资源定位：**  
+ > &emsp; URL 统一资源定位符 URI：统一资源  
+ >  
+ > **五、数据的传输：**  
+ >  &emsp; **1、协议： TCP 和 UDP 协议**  
+ > &emsp; &emsp; 1)、TCP(transfer control protocol): 电话 类似于三次握手 面向连接 安全可靠 效率低下  
+ > &emsp; &emsp; 2)、UDP(UserDatagramProtocol): 短信 非面向连接 效率高  
+ > &emsp; 2、传输：  
+ > &emsp; &emsp; 1)、先封装  
+ > &emsp; &emsp; 2)、后拆封  
+ >  
+ >  
+ >  
+ > **-->类**  
+ > 1、InetAddress InetSocketAddress  
+ > 2、URL  
+ > 3、TCP: ServerSocket Socket  
+ > 4、UDP: DatagramSocket DatagramPacket  
+ >  
+ + #### 地址 及 端口  
+ > **1、InetAdress ： 封装 IP 及 DNS**  
+ > 方法:  
+ >  &emsp; getHostAddress() 返回ip地址  
+ > &emsp; getHostName() 返回域名 | 本机为计算机名  
+ > &emsp; InetAddress.getLocalHost()  
+ > &emsp; InetAddres.getByName("ip地址|域名")    
+ >  
+ > **2、InetSocketAddress： 封装端口**  
+ > &emsp; 1)、创建对象：  
+ > &emsp; &emsp; InetSocketAddress(String hostname, int port)   
+ > &emsp; &emsp; InetSocketAddress(InetAddress addr, int port)  
+ > &emsp; 2)、方法：  
+ > &emsp; &emsp; getAddress()  
+ > &emsp; &emsp; getHostName()  
+ > &emsp; &emsp; getPort()  
+ >  
+ + #### URL  
+ > **URI(uniform resource identifier) 统一资源标识符，用来唯一的标识一个资源**  
+ > **URL(uniform resource locator) 统一资源定位器，它是一种具体的URI**  
+ >  
+ > **四部分组成： 协议 存放资源的主机域名 端口 资源文件名(/)**  
+ >  
+ > **URL:**  
+ > **一、创建**  
+ > &emsp; URL(String spec) : 绝对路径构建  
+ > &emsp; URL(URL context, String spec) : 相对路径构建 
